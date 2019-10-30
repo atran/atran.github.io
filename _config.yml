@@ -1,7 +1,7 @@
 # title: eep # The title of the blog
 author: Anthony Tran # Your name 
 email: studio@anthonytran.info # your email shown in the footer
-url: http://anthonytran.info/ # this is your site's root address.
+url: https://atran.github.io/ # this is your site's root address.
 # description: > # this means to ignore newlines until "show_excerpts:"
   # anthony tran is a technologist, writer, and artist, currently attending the european graduate school for philosophy and art.
 favicon: "./favicon.ico" # set the favicon of the site 
