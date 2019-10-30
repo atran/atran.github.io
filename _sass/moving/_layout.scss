@@ -145,6 +145,44 @@
   margin-top: -10px;
 }
 
+.home-title .name,
+.home-title .more {
+  background-color: #FF8B99;
+  border-radius: 0.1rem;
+  padding: 0.125rem 0.4rem 0.1rem 0.4rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.home-title .more {
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.home-title .overview-list {
+  margin: 0;
+  list-style: none;
+  display: none;
+}
+
+.home-title .overview-list li {
+  margin-bottom: 3px;
+}
+
+.home-title .overview-list li:before {
+  content: '\21AC';
+  margin-right: 12px;
+}
+
+.home-title.show-list .more {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-title.show-list .overview-list {
+  display: block;
+}
+
 .home-heading {
   font-weight: 1000;
   color: lighten($text-color, 15%);
@@ -204,14 +242,14 @@
 }
 
 .post-link-layout {
-  margin-left: 10%;
+  margin-left: 2px;
   display: inline;
 
   @media (max-width: 500px) {
-    @include relative-font-size(1);
+    @include relative-font-size(0.8);
   }
 
-  @include relative-font-size(1.2);
+  @include relative-font-size(1);
 }
 
 .black-link {

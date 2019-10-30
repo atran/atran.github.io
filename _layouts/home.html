@@ -6,10 +6,36 @@ layout: default
   <head>
       <title>{{ site.title }}</title>
   </head>
+
   <div class="home-title">
-    <!-- <p class="home-heading">{{ site.title }}</p>
-    <p class="home-sub-heading">{{- site.description | escape -}}</p> -->
+    <p>
+      <a href="/" class="name">Anthony Tran</a>
+      works across technology, publication, and&nbsp;art.
+      <span class="more">&#8628;</span>
+    </p>
+    <ul class="overview-list hidden">
+      <li>currently pursuing an MA at European Graduate School in Philosophy and Art.</li>
+      <li>grew up in a hotel in Times Square and recently moved out of LA.</li>
+      <li>extremely online in a specific way but probs better face-to-face.</li>
+      <li><a href="https://docs.google.com/document/d/1r_mZo4SGg8Wy8UuM3JYbkpns9PxP7tSAlSSoBeIH3Vw/edit?usp=sharing" target="_blank">a brief resume</a>
+        /
+        <a href="mailto:{{ site.email }}">email me</a>
+      </li>
+
+    </ul>
   </div>
+
+  <script>
+      const homeTitleEl = document.querySelector('.home-title');
+      const moreEl = document.querySelector('.more');
+
+      function revealMoreInfo() {
+        homeTitleEl.classList.add('show-list');
+      }
+
+      moreEl.addEventListener('click', revealMoreInfo);
+  </script>
+
 
   {%- if site.posts.size > 0 -%}
   <ul class="post-list">
