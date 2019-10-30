@@ -33,3 +33,5 @@ There are [alternative models](https://www.vox.com/energy-and-environment/2019/1
 Our problems seem to sometimes feel like they only exist online, images with their re-posts & comments streaming from our feeds, the digital furthering the distance of the most pressing issues surrounding us. But we still live in a very elemental world: electricity and fire are some of the most basic materials. The dangerous interplay of private profit over public risk that still pervades our world must be rethought. I don't care if you use plastic straws; we should instead be using that guilt to advocate for bigger ideas of our economy and its corporate structures. Humans have always shaped the elements and it is time to re-configure them to benefit the public good.
 
 ![](/img/_109468095_tv057661056.jpg)
+
+x
