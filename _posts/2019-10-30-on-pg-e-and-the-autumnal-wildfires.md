@@ -10,7 +10,7 @@ thumbnail: /img/fullsizeoutput_3a51-e1572409584842.jpeg
 ---
 > The electrical grid is a volatile mix of coal, sweat, electromagnetic fields, computer programs, electron streams, profit motives, heat, lifestyles, nuclear fuel, plastic, fantasies of mastery, static, legislation, water, economic theory, wire, and wood.
 
-If anything, [Let's Own PG&E](https://letsownpge.org/).
+If anything, visit [Let's Own PG&E](https://letsownpge.org/).
 
 For what it's worth, I started writing about [PG&E's rolling blackouts a week ago](https://www.npr.org/2019/10/23/772854265/pg-e-imposes-new-power-shutoffs-in-parts-of-northern-california-to-avert-wildfir?t=1571926633124), before the [Kincade fire](https://www.latimes.com/wildfires-map/) – a recurring theme in these end times is how the urgency of disasters outpaces our ability to comprehend it. But, really, this is another tragic story in the ever-perpetual saga of corporate interests over individuals that literally pollute and incinerate our environment. It's certain: [climate change is straight up going to kill us soon](https://www.instagram.com/extinctionrebellion/). Although I prefer it to be [as graceful as possible](https://www.politis.fr/articles/2019/09/effondrement-en-cours-on-fait-quoi-40822/), it's especially accelerated and cruel, though, because privatized interests make us feel like its our fault (see: plastic straws) while leaving us literally and figuratively powerless, all the while the state continues to bail them out. 
 
