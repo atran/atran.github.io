@@ -1,18 +1,18 @@
 ---
-layout:	"post"
-categories:	"blog"
-title:	"LOVE THYSELFIE: What is intimacy online?"
-date:	2019-08-07
-thumbnail:	/img/1*4o8RNalBzQUpihR-ZnfBug.png
-author:	
+layout: post
+categories: blog
+title: 'LOVE THYSELFIE: What is intimacy online?'
+tags:
+  - post
+date: 2019-08-07T00:00:00.000Z
+thumbnail: /img/1*4o8RNalBzQUpihR-ZnfBug.png
 ---
-
-* * *
+- - -
 
 > _From a real body, which was there, proceed radiations which ultimately
-touch me, who am here; the duration of the transmission is insignificant; the
-photograph of the missing being, as Sontag says, will touch me like the
-delayed rays of a star.  -- _Roland Barthes
+> touch me, who am here; the duration of the transmission is insignificant; the
+> photograph of the missing being, as Sontag says, will touch me like the
+> delayed rays of a star._  -- Roland Barthes
 
 ![](/img/1*4o8RNalBzQUpihR-ZnfBug.png)
 
@@ -92,4 +92,3 @@ gets absorbed into capitalism: I see ads for Groups now. This publication is a
 capsule of shared, lived experience from before that: the domains of AFK and
 WWW funneled through the self, from those who lived through the inevitable
 alignment of the two. -- AT
-
