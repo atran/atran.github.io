@@ -3,6 +3,7 @@ backend:
   repo: atran/atran.github.io
   branch: master
   site_domain: flamboyant-gates-386ad1.netlify.com
+publish_mode: editorial_workflow
 media_folder: "img/"
 collections:
   - name: "blog" # Used in routes, e.g. /admin/collections/blog
