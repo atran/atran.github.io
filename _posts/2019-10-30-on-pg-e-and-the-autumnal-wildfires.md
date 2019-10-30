@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: blog
-title: On PG&E and the Autumnal Wildfires
+title: On PG&E and the 2019 Autumnal Wildfires
 tags:
   - 'on'
 author: Anthony Tran
