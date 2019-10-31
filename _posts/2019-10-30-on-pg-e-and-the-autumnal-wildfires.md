@@ -34,4 +34,4 @@ Our problems seem to sometimes feel like they only exist online, images with the
 
 ![lib](/img/_109468095_tv057661056.jpg)
 
-x
+There is an irony that the Ronald Reagan Presidental Library is threatened, the deliverer of the modern-day neoliberal agenda being consumed by a physical manifestation of its ideology.
