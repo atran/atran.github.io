@@ -4,7 +4,6 @@ categories: blog
 title: On PG&E and the 2019 Autumnal Wildfires
 tags:
   - 'on'
-author: Anthony Tran
 date: 2019-10-30T21:52:07.393Z
 thumbnail: /img/fullsizeoutput_3a51-e1572409584842.jpeg
 ---
