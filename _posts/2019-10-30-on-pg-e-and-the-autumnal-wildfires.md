@@ -32,6 +32,6 @@ There are [alternative models](https://www.vox.com/energy-and-environment/2019/1
 
 Our problems seem to sometimes feel like they only exist online, images with their re-posts & comments streaming from our feeds, the digital furthering the distance of the most pressing issues surrounding us. But we still live in a very elemental world: electricity and fire are some of its most basic materials. The dangerous interplay of private profit over public risk that still pervades our world must be reconstituted to fit the persistence of our earthly existence. I don't care if you use plastic straws; we should instead be using that guilt to advocate for bigger imaginations of what our economy and its structures could be. Humans have always shaped the elements and it is time to configure them to benefit the public good.
 
-![lib](/img/_109468095_tv057661056.jpg)
+![](/img/452d8096-4da1-416f-a0d3-a3d81f0ef33c-afp_afp_1lv3v1.jpeg)
 
 There is an irony that the Ronald Reagan Presidental Library is threatened, the deliverer of the modern-day neoliberal agenda being consumed by a physical manifestation of its ideology.
