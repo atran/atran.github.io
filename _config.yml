@@ -2,12 +2,12 @@ title: Anthony Tran # The title of the blog
 author: Anthony Tran # Your name 
 email: studio@anthonytran.info # your email shown in the footer
 url: https://anthonytran.info/ # this is your site's root address.
-# description: > # this means to ignore newlines until "show_excerpts:"
-  # anthony tran is a technologist, writer, and artist, currently attending the european graduate school for philosophy and art.
+description: > # this means to ignore newlines until "show_excerpts:"
+  Anthony Tran works across technology, publication, and art. ↴
 favicon: "./favicon.ico" # set the favicon of the site 
 google_analytics: UA-36861842-1
 
-show_excerpts: false # set to true to show excerpts on the homepage
+show_excerpts: true # set to true to show excerpts on the homepage
   
 # Moving date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
