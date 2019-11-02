@@ -1,7 +1,7 @@
 ---
 layout: post
 categories: blog
-title: Slides on the Anthropocene & Art
+title: Slides on the Art of the Anthropocene
 tags:
   - egs
 date: 2019-11-01T11:52:43.844Z
