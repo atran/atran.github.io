@@ -1,12 +1,12 @@
 ---
 layout: post
 categories: blog
-title: Slides on the Anthropocene & Art
+title: Art of the Anthropocene
 tags:
   - egs
 date: 2019-11-01T11:52:43.844Z
 ---
-These are slides that I showed in a quick presentation for my "Cities of the Anthropocene: Lagos, Kinshasa & Johannesburg" class at EGS. I might add captions later.
+These are slides that I showed in a quick presentation for my "Cities of the Anthropocene: Lagos, Kinshasa & Johannesburg" class at EGS on 10/27. I might add captions later.
 
 ![](/img/egs-anthropocene_-art_-nature_-.jpg)
 
