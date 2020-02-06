@@ -211,8 +211,13 @@
   margin-left: 0;
   list-style: none;
 
+  ul {
+    margin-left: 0;
+  }
+
   li {
     margin-bottom: $spacing-unit / 12;
+    list-style: none;
   }
 }
 
@@ -231,7 +236,7 @@
 
 .post-meta {
   display: inline-block;
-  min-width: 60px;
+  // min-width: 60px;
 
   @media (max-width: 500px) {
     @include relative-font-size(0.8);
@@ -241,9 +246,27 @@
   color: lighten($text-color, 25%);
 }
 
+.post-type {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url('/img/svg/circle.svg') no-repeat;
+  background-size: cover;
+  height: 12px;
+  width: 14px;
+  margin-top: 2px;
+}
+
+.post-type {
+  &--blog {
+    background-image: url('/img/svg/edit.svg');
+  }
+}
+
 .post-link-layout {
   margin-left: 2px;
   display: inline;
+  max-width: 100px;
 
   @media (max-width: 500px) {
     @include relative-font-size(0.8);
