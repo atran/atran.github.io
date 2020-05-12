@@ -1,3 +1,3 @@
 ---
-layout: flat
+layout: old
 ---
