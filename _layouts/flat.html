@@ -1,3 +1,11 @@
+---
+poop: poop
+marquee:
+  - /img/egs-anthropocene_-art_-nature_-.jpg
+  - /img/egs-anthropocene_-art_-nature_-.jpg
+  - /img/egs-anthropocene_-art_-nature_-.jpg
+---
+
 <head>
 	<title>Anthony Tran</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,25 +22,73 @@
   </script>
   
   <style>
+    @keyframes slidein {
+      from {
+        margin-left: 100%;
+        width: 300%; 
+      }
+
+      to {
+        margin-left: 0%;
+        width: 100%;
+      }
+    }
+
     body {
       font-family: Roboto, monospace;
       font-size: calc(1em + 0.33vw);
       line-height: 1.4em;
       max-width: 680px;
     }
-    img {
+    body > img {
       width: 200px;
+    }
+    body > img:last-child {
+      float: right;
     }
     body > div {
       margin: 0 1em;
+      position: relative;
+      z-index: 11;
     }
-    img:last-child {
-      float: right;
+    .marquee {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    .inner {
+      animation: 300s infinite alternate slidein;
+    }
+    .images {
+      height: 100%;
+      display: flex;
+      flex-wrap: no-wrap;
+    }
+    .images .image {
+      position: relative;
+      width: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <img src="/img/mushroom.jpg" />
+  <div class="marquee">
+    <div class="inner">
+      <div class="images">
+        {% for item in layout.marquee %}
+          <div class="image">
+            <img src="{{ item }}" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
   <div>
     <br />
     <a href="/">anthony tran</a> is a biome (they/them);
