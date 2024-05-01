@@ -45,9 +45,6 @@ moving:
 # theme: moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
 remote_theme: huangyz0918/moving
 
-gems:
-  - jekyll-gallery-generator
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
