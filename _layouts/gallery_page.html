@@ -21,8 +21,7 @@ layout: page
   import lgThumbnail from 'https://cdn.jsdelivr.net/npm/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js';
   import lgZoom from 'https://cdn.jsdelivr.net/npm/lightgallery/plugins/zoom/lg-zoom.es5.js';
 
-  // Initialize lightGallery on '.lightgallery' elements
-  lightGallery(document.querySelectorAll('#lightgallery'), {
+  lightGallery(document.getElementById('lightgallery'), {
       plugins: [lgZoom, lgThumbnail],
       speed: 500,
   });
