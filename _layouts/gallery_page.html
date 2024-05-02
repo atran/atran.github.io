@@ -66,14 +66,25 @@ layout: page
 </script>
 
 <script type="text/javascript">
-const adjustStickyPosition = (el) => {
+const adjustStickyPosition = (item) => {
   // Get viewport height and calculate half
   const viewportHeight = window.innerHeight;
   const halfViewportHeight = viewportHeight / 2;
 
+  // Get item dimensions from data attributes
+  const width = parseInt(item.getAttribute('data-width'), 10);
+  const height = parseInt(item.getAttribute('data-height'), 10);
+
+  // Assume column width is known or calculate it; here it is assumed to be full width for demonstration
+  const columnWidth = item.clientWidth;  // Get the actual width of the element (e.g., if it's a column)
+
+  // Scale item height based on its width to maintain aspect ratio
+  const scaledItemHeight = columnWidth * (height / width);  // corrected formula to compute the height based on the aspect ratio
+
   // Adjust 'top' to make the element center vertically when sticky
-  el.style.top = `${halfViewportHeight - el.offsetHeight / 2}px`;
+  item.style.top = `${halfViewportHeight - scaledItemHeight / 2}px`;
 };
+
 
 function createMasonryLayout(containerId, columns, gutter) {
   const container = document.getElementById(containerId);
@@ -128,7 +139,7 @@ function createMasonryLayout(containerId, columns, gutter) {
 }
 
 // Initialize or reinitialize the masonry layout on window load and resize
-window.onload = () => createMasonryLayout('lightgallery', 3, 10);
+createMasonryLayout('lightgallery', 3, 10);
 window.onresize = () => createMasonryLayout('lightgallery', 3, 10);
 </script>
 
