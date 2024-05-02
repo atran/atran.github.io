@@ -51,6 +51,16 @@ plugins:
   - jekyll-gallery-generator
 
 gallery:
-  2024_bday_film:
-    info:
-      desc: All photos here by Alex Free (@alexfree__hi)
+  sort_field: "title"
+  title_prefix: ""
+  galleries:
+    20230807_summer_away:
+      best_image: 000492610034.jpg
+    20240426_bday_film:
+      info:
+        desc: All photos here by Alex Free (@alexfree_hi)
+    20240426_bday_digitals:
+      info:
+        desc: All photos here by Alex Free (@alexfree_hi)
+    20240428_bday_b&w:
+      best_image: 002.jpg

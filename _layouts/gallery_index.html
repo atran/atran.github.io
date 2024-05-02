@@ -3,23 +3,23 @@ layout: page
 ---
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/em-ak/okcss/dist/ok.min.css" />
 
-<style TYPE="text/css">
+<style type="text/css">
 .gallery-wrapper {
-  /* width: 35em; */
   text-align: center;
   padding: 1em 0 4em 0;
 }
-.gallery-best-image{
-  max-height: 20em;
-  max-width: 20em;
+
+.gallery-wrapper img {
+  border: 6px solid white;
 }
+
 </style>
 
 
 <h1><a href="/{{ site.gallery.dir }}">{{ page.title }}</a></h1>
 <hr />
 
-{% for gallery in page.galleries reversed %}
+{% for gallery in page.galleries %}
 <div class="gallery-wrapper">
     <a href="{{ gallery['gallery'] }}">
         <img class="gallery-best-image" src="{{ gallery['gallery'] }}/thumbs/{{ gallery['best_image'] }}">
@@ -29,4 +29,4 @@ layout: page
 </div>
 {% endfor %}
 
-we can have a glass of wine at bar battista while we wait
+we can have a glass of wine while we wait

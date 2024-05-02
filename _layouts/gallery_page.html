@@ -6,23 +6,47 @@ layout: page
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/em-ak/okcss/dist/ok.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
+  .photo-heading {
+    position: sticky;
+    top: 1rem;
+    z-index: 11;
+  }
+
   .gallery-image-wrapper {
     position: relative;
+    padding-bottom: 25vh;
   }
+
   .gallery-image-wrapper a {
     display: block;
-    box-sizing: border-box; /* Includes padding in the width/height calculations */
+    position: sticky;
+    image-rendering: optimizeQuality;
+  }
+
+  .gallery-image-wrapper img {
+    border: 4px solid white;
+  }
+
+  /* Every odd element starting from the third element is rotated -6 degrees */
+  .gallery-image-wrapper a:nth-child(odd) {
+    transform: rotate(-6deg);
+  }
+
+  /* Every even element is rotated +6 degrees */
+  .gallery-image-wrapper a:nth-child(even) {
+    transform: rotate(6deg);
   }
 </style>
 
-<h1>
-  <a href="/photos/">Photos</a>/<a href="/photos/{{ page.gallery }}">{{ page.title | remove: "Photos: " }}</a>
+<h1 class="photo-heading">
+  <a href="/photos/">Photos</a>/<a href="/photos/{{ page.gallery }}">{{ page.title }}</a>
 </h1>
-  <p>{{site.gallery[page.gallery].info.desc}}</p>
+  <p>{{ site.gallery.galleries[page.gallery].info.desc }}</p>
 <hr />
 
 <div class="gallery-image-wrapper" id="lightgallery">
-  {% for image in page.images %}
+  {% assign sorted_images = page.images | sort: 'name' %}
+  {% for image in sorted_images %}
     <a name="{{ image.name }}" href="{{ image.name }}" data-width="{{image.exif.width}}" data-height="{{image.exif.height}}">
         <img class="gallery-image" src="thumbs/{{ image.name }}" />
     </a>
@@ -33,15 +57,24 @@ layout: page
 <script type="module">
   import lightGallery from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm';
   import lgThumbnail from 'https://cdn.jsdelivr.net/npm/lightgallery/plugins/thumbnail/lg-thumbnail.es5.js';
-  import lgZoom from 'https://cdn.jsdelivr.net/npm/lightgallery/plugins/zoom/lg-zoom.es5.js';
 
   lightGallery(document.getElementById('lightgallery'), {
-      plugins: [lgZoom, lgThumbnail],
-      speed: 66,
+      plugins: [lgThumbnail],
+      speed: 111,
+      mode: 'lg-fade'
   });
 </script>
 
 <script type="text/javascript">
+const adjustStickyPosition = (el) => {
+  // Get viewport height and calculate half
+  const viewportHeight = window.innerHeight;
+  const halfViewportHeight = viewportHeight / 2;
+
+  // Adjust 'top' to make the element center vertically when sticky
+  el.style.top = `${halfViewportHeight - el.offsetHeight / 2}px`;
+};
+
 function createMasonryLayout(containerId, columns, gutter) {
   const container = document.getElementById(containerId);
   const windowWidth = window.innerWidth; // Get the current window width
@@ -54,6 +87,7 @@ function createMasonryLayout(containerId, columns, gutter) {
     const items = container.querySelectorAll('a');
     items.forEach(item => {
       item.removeAttribute('style'); // Remove styles to stack images in a single column
+      adjustStickyPosition(item)
     });
   } else {
     // Function to get the minimum value index from an array
@@ -97,3 +131,5 @@ function createMasonryLayout(containerId, columns, gutter) {
 window.onload = () => createMasonryLayout('lightgallery', 3, 10);
 window.onresize = () => createMasonryLayout('lightgallery', 3, 10);
 </script>
+
+we can have a glass of wine while we wait
