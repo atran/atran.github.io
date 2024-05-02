@@ -1,0 +1,58 @@
+---
+layout: page
+---
+
+<script type="module">
+  import lightgallery from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm'
+  </script>
+<style TYPE="text/css">
+.gallery-image-wrapper {
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+  margin: 1em;
+  position: relative;
+}
+.gallery-image {
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  max-height: 100%;
+  max-width: 100%;
+}
+</style>
+<h1><a href="/{{ site.gallery.dir }}">{{ page.title }}</a></h1>
+<hr />
+
+<div id="lightgallery">
+  <a href="img/img1.jpg" data-lg-size="1600-2400">
+      <img alt="img1" src="img/thumb1.jpg" />
+  </a>
+  <a href="img/img2.jpg" data-lg-size="1024-800">
+      <img alt="img2" src="img/thumb2.jpg" />
+  </a>
+  ...
+</div>
+
+{% for image in page.images %}
+    <div class="gallery-image-wrapper lightgallery">
+        <a name="{{ image.name }}" href="{{ image.name }}">
+            <img class="gallery-image" src="thumbs/{{ image.name }}" />
+        </a>
+    </div>
+{% endfor %}
+
+<script type="text/javascript">
+  import lightGallery from 'lightgallery';
+
+  // Plugins
+  import lgThumbnail from 'lightgallery/plugins/thumbnail'
+  import lgZoom from 'lightgallery/plugins/zoom'
+
+
+  lightGallery(document.querySelectorAll('lightgallery'), {
+      plugins: [lgZoom, lgThumbnail],
+      speed: 500,
+  });
+</script>
