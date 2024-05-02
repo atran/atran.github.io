@@ -7,13 +7,14 @@ layout: page
 <h1><a href="/{{ site.gallery.dir }}">{{ page.title }}</a></h1>
 <hr />
 
+<div class="gallery-image-wrapper" id="lightgallery">
 {% for image in page.images %}
-    <div class="gallery-image-wrapper lightgallery">
-        <a name="{{ image.name }}" href="{{ image.name }}">
-            <img class="gallery-image" src="thumbs/{{ image.name }}" />
-        </a>
-    </div>
+  <a name="{{ image.name }}" href="{{ image.name }}">
+      <img class="gallery-image" src="thumbs/{{ image.name }}" />
+  </a>
 {% endfor %}
+</div>
+
 
 <script type="module">
   import lightGallery from 'https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/+esm';
@@ -21,7 +22,7 @@ layout: page
   import lgZoom from 'https://cdn.jsdelivr.net/npm/lightgallery/plugins/zoom/lg-zoom.es5.js';
 
   // Initialize lightGallery on '.lightgallery' elements
-  lightGallery(document.querySelector('.lightgallery'), {
+  lightGallery(document.querySelectorAll('#lightgallery'), {
       plugins: [lgZoom, lgThumbnail],
       speed: 500,
   });
