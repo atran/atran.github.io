@@ -2,17 +2,31 @@
 layout: page
 ---
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<h1><a href="/{{ site.gallery.dir }}">{{ page.title }}</a></h1>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/em-ak/okcss/dist/ok.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  .gallery-image-wrapper {
+    position: relative;
+  }
+  .gallery-image-wrapper a {
+    display: block;
+    box-sizing: border-box; /* Includes padding in the width/height calculations */
+  }
+</style>
+
+<h1>
+  <a href="/photos/">Photos</a>/<a href="/photos/{{ page.gallery }}">{{ page.title | remove: "Photos: " }}</a>
+</h1>
+  <p>{{site.gallery[page.gallery].info.desc}}</p>
 <hr />
 
 <div class="gallery-image-wrapper" id="lightgallery">
-{% for image in page.images %}
-  <a name="{{ image.name }}" href="{{ image.name }}">
-      <img class="gallery-image" src="thumbs/{{ image.name }}" />
-  </a>
-{% endfor %}
+  {% for image in page.images %}
+    <a name="{{ image.name }}" href="{{ image.name }}" data-width="{{image.exif.width}}" data-height="{{image.exif.height}}">
+        <img class="gallery-image" src="thumbs/{{ image.name }}" />
+    </a>
+  {% endfor %}
 </div>
 
 
@@ -23,6 +37,63 @@ layout: page
 
   lightGallery(document.getElementById('lightgallery'), {
       plugins: [lgZoom, lgThumbnail],
-      speed: 500,
+      speed: 66,
   });
+</script>
+
+<script type="text/javascript">
+function createMasonryLayout(containerId, columns, gutter) {
+  const container = document.getElementById(containerId);
+  const windowWidth = window.innerWidth; // Get the current window width
+
+  if (!container) return;
+
+  if (windowWidth < 768) {
+    // Disable masonry layout for small screens
+    container.removeAttribute('style');
+    const items = container.querySelectorAll('a');
+    items.forEach(item => {
+      item.removeAttribute('style'); // Remove styles to stack images in a single column
+    });
+  } else {
+    // Function to get the minimum value index from an array
+    const getMinIndex = (arr) => arr.indexOf(Math.min(...arr));
+
+    // Initial setup for masonry layout
+    let columnHeights = new Array(columns).fill(0);
+    let columnWidth = (container.clientWidth - gutter * (columns - 1)) / columns;
+
+    // Position each item
+    const items = container.querySelectorAll('a');
+    items.forEach(item => {
+      item.style.position = 'absolute';
+
+      const width = parseInt(item.getAttribute('data-width'), 10);
+      const height = parseInt(item.getAttribute('data-height'), 10);
+
+      // Scale item to fit column width
+      const itemAspectRatio = width / height;
+      const finalItemHeight = columnWidth / itemAspectRatio;
+      item.style.width = `${columnWidth}px`;
+      item.style.height = `${finalItemHeight}px`;
+
+      // Find the column with the least height and add the item there
+      const minColumnIndex = getMinIndex(columnHeights);
+      const xPosition = minColumnIndex * (columnWidth + gutter);
+      const yPosition = columnHeights[minColumnIndex];
+      item.style.left = `${xPosition}px`;
+      item.style.top = `${yPosition}px`;
+
+      // Update the height of the column including gutter
+      columnHeights[minColumnIndex] += finalItemHeight + gutter;
+    });
+
+    // Update container height based on the tallest column minus the last gutter (if necessary)
+    container.style.height = `${Math.max(...columnHeights) - gutter}px`;
+  }
+}
+
+// Initialize or reinitialize the masonry layout on window load and resize
+window.onload = () => createMasonryLayout('lightgallery', 3, 10);
+window.onresize = () => createMasonryLayout('lightgallery', 3, 10);
 </script>

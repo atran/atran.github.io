@@ -49,3 +49,8 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gallery-generator
+
+gallery:
+  2024_bday_film:
+    info:
+      desc: All photos here by Alex Free (@alexfree__hi)
