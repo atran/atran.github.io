@@ -17,10 +17,16 @@ layout: page
     padding-bottom: 25vh;
   }
 
+  .gallery-image-wrapper * {
+    user-select: none;
+    -webkit-user-select: none; /* Safari specific prefix */
+    image-rendering: optimizeQuality;
+  }
+
   .gallery-image-wrapper a {
     display: block;
     position: sticky;
-    image-rendering: optimizeQuality;
+    margin: auto 3px;
   }
 
   .gallery-image-wrapper img {
@@ -61,7 +67,10 @@ layout: page
   lightGallery(document.getElementById('lightgallery'), {
       plugins: [lgThumbnail],
       speed: 111,
-      mode: 'lg-fade'
+      mode: 'lg-fade',
+      mobileSettings: {
+        showCloseIcon: true,
+      }
   });
 </script>
 
@@ -139,7 +148,7 @@ function createMasonryLayout(containerId, columns, gutter) {
 }
 
 // Initialize or reinitialize the masonry layout on window load and resize
-createMasonryLayout('lightgallery', 3, 10);
+setTimeout(() =>  createMasonryLayout('lightgallery', 3, 10), 100)
 window.onresize = () => createMasonryLayout('lightgallery', 3, 10);
 </script>
 
